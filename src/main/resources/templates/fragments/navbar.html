@@ -22,7 +22,6 @@
                 <th:block sec:authorize="isAuthenticated()">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <th:block sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
-
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="/admin/actions">Добави Задача</a>
                             </li>
@@ -32,12 +31,6 @@
                         </li>
                     </ul>
                 </th:block>
-                    <th:block sec:authorize="isAuthenticated()">
-                        <form class="form-inline my-2 my-lg-0">
-                            <a class="btn text-dark btn btn-outline-danger my-2 my-sm-0" href="/offer/search" role="button">Търси</a>
-
-                        </form>
-                    </th:block>
             </div>
         </div>
     </nav>
