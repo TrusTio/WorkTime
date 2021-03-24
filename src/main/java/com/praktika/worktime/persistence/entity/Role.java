@@ -1,28 +1,30 @@
 package com.praktika.worktime.persistence.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NaturalId;
+import org.springframework.security.core.GrantedAuthority;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity(name = "Roles")
-public class Role {
+@Entity
+@Table(name = "roles")
+public class Role extends BaseEntity implements GrantedAuthority {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "authority")
+    private String authority;
 
-    @Enumerated(EnumType.STRING)
-    @NaturalId
-    private RoleName name;
+    public Role() {
+    }
+    public Role(String authority) {
+        this.authority = authority;
+    }
+
+    @Override
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 }
