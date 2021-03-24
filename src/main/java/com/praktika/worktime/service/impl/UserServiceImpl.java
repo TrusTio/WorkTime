@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashSet;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -51,15 +52,15 @@ public class UserServiceImpl implements UserService {
 
 
 
-    @Override
-    public boolean existByUsername(String username) {
-        return false;
-    }
-
-    @Override
-    public boolean existByEmail(String email) {
-        return false;
-    }
+//    @Override
+//    public boolean existByUsername(String username) {
+//     return userRepository.existsByUsername(username);
+//    }
+//
+//    @Override
+//    public boolean existByEmail(String email) {
+//        return userRepository.existByEmail(email);
+//    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
