@@ -1,6 +1,7 @@
 package com.praktika.worktime.web;
 
 import com.praktika.worktime.persistence.bindings.TaskAddBindingModel;
+import com.praktika.worktime.persistence.entity.Task;
 import com.praktika.worktime.service.TaskService;
 import com.praktika.worktime.service.models.TaskServiceModel;
 import org.modelmapper.ModelMapper;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/task")

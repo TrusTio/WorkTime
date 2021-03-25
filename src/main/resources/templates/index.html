@@ -1,11 +1,42 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <th:block th:include="~{fragments/head}"/>
 </head>
 <body>
-<p>Get your greeting <a href="v1/users/greeting">here</a></p>
+
+<header>
+    <nav class="navbar
+    navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <th:block sec:authorize="isAnonymous()">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" th:href="@{/}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" th:href="@{/login}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark btn"
+                               th:href="@{/user/register}">Register</a>
+                        </li>
+                    </ul>
+                </th:block>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main class="container fill mt-4">
+    <h1>Home page</h1>
+</main>
+
+<th:block th:include="~{fragments/footer}"/>
 </body>
 </html>
