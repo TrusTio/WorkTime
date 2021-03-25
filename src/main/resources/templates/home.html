@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:action="http://www.w3.org/1999/xhtml"       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 >
 <head th:include="~{fragments/head}"></head>
 <body>
@@ -38,7 +38,8 @@
         <select name="tasks" id="tasks">
             <option value="" disabled selected>Select Task</option>
             <option
-                    th:each="c : ${taskList}" th:value="${taskList.name}" th:text="${taskList.name}"  selected>Изберете категория</option>
+                    th:each="c : ${taskList}" th:value="${c.name}" th:text="${c.name}" selected>Choose Task
+            </option>
         </select>
     </div>
 </main>
