@@ -47,12 +47,12 @@ public class UserController {
                                   BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
 
-//        if (this.userService.existByUsername(userRegisterBindingModel.getUsername())) {
-//            bindingResult.rejectValue("username", "error.userRegisterBindingModel", "Потребител с това име вече съществува!");
-//        }
-//        if (this.userService.existByEmail(userRegisterBindingModel.getEmail())) {
-//            bindingResult.rejectValue("email", "error.userRegisterBindingModel", "Потребител с този емайл вече съществува!");
-//        }
+        if (this.userService.existByUsername(userRegisterBindingModel.getUsername())) {
+            bindingResult.rejectValue("username", "error.userRegisterBindingModel", "Потребител с това име вече съществува!");
+        }
+        if (this.userService.existByEmail(userRegisterBindingModel.getEmail())) {
+            bindingResult.rejectValue("email", "error.userRegisterBindingModel", "Потребител с този емайл вече съществува!");
+        }
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBindingModel", bindingResult);
             redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);

@@ -9,7 +9,7 @@ public interface UserService extends UserDetailsService {
 
 
     UserServiceModel register(UserServiceModel userServiceModel);
-//    boolean existByEmail(String email);
-//    boolean existByUsername(String username);
+    boolean existByEmail(String email);
+    boolean existByUsername(String username);
 
 }
