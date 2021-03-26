@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -26,8 +27,18 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public void save(Task task) {
+        taskRepository.save(task);
+    }
+
+    @Override
     public List<Task> getAll() {
-        return taskRepository.findAll();
+        return taskRepository.findAllByDurationIsNull();
+    }
+
+    @Override
+    public Optional<Task> getByName(String name) {
+        return taskRepository.findByName(name);
     }
 
 }

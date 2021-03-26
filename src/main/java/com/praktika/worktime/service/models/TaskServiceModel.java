@@ -1,11 +1,11 @@
 package com.praktika.worktime.service.models;
 
-import java.time.Duration;
+import java.math.BigInteger;
 
 public class TaskServiceModel {
     private String name;
     private String comment;
-    private Duration duration;
+    private BigInteger duration;
 
     public TaskServiceModel() {
     }
@@ -26,11 +26,11 @@ public class TaskServiceModel {
         this.comment = comment;
     }
 
-    public Duration getDuration() {
+    public BigInteger getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(BigInteger duration) {
         this.duration = duration;
     }
 }

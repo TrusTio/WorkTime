@@ -4,14 +4,14 @@ package com.praktika.worktime.persistence.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.time.Duration;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "tasks")
 public class Task extends BaseEntity {
     private String name;
     private String comment;
-    private Duration duration;
+    private BigInteger duration;
 
     public Task() {
 
@@ -35,11 +35,11 @@ public class Task extends BaseEntity {
         this.comment = comment;
     }
     @Column(name = "duration")
-    public Duration getDuration() {
+    public BigInteger getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(BigInteger duration) {
         this.duration = duration;
     }
 }
