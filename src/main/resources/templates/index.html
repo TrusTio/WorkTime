@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
@@ -6,23 +7,22 @@
 <head>
     <th:block th:include="~{fragments/head}"/>
 </head>
-<body>
-
+<body style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/03/Dark-Blue-Background-free-desktop.jpg');">
 <header>
     <nav class="navbar
-    navbar-expand-lg navbar-light bg-light">
+    navbar-expand-lg navbar-light bg-dark">
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <th:block sec:authorize="isAnonymous()">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" th:href="@{/}">Home</a>
+                            <a class="nav-link text-primary" th:href="@{/}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" th:href="@{/login}">Login</a>
+                            <a class="nav-link text-light" th:href="@{/login}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn"
+                            <a class="nav-link text-light btn"
                                th:href="@{/user/register}">Register</a>
                         </li>
                     </ul>
@@ -33,10 +33,14 @@
 </header>
 
 
-<main class="container fill mt-4">
-    <h1>Home page</h1>
-</main>
+<div class="container w-25">
+
+    <h1 class="text-light">Home page</h1>
+</div>
 
 <th:block th:include="~{fragments/footer}"/>
+<div class="text-center text-light p-3" style="opacity: 0.9;">
+    © 2021 Copyright СТАЖ ФООТЕР
+</div>
 </body>
 </html>

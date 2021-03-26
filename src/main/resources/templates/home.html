@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      class="h-100">
+
 <head th:include="~{fragments/head}"></head>
-<body>
+<body  style="background-image: url('https://elevateservices.com/wp-content/uploads/AdobeStock_208568531.jpeg');">
+
 
 <header>
     <nav class="navbar
-    navbar-expand-lg navbar-light bg-light">
+    navbar-expand-lg navbar-light bg-dark">
+
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <th:block sec:authorize="isAuthenticated()">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark btn"
+                            <a class="nav-link text-light btn"
                                th:href="@{/home}">Home</a>
                         </li>
                         <th:block sec:authorize="hasRole('ROLE_ADMIN')">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" th:href="@{/task/add}">Add Task</a>
+                                <a class="nav-link text-primary" th:href="@{/task/add}">Add Task</a>
                             </li>
                         </th:block>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" th:href="@{/task/completed}">Completed</a>
+                            <a class="nav-link text-light" th:href="@{/logout}">Logout</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" th:href="@{/logout}">Logout</a>
-                        </li>
-
 
                     </ul>
                 </th:block>
@@ -35,7 +34,8 @@
     </nav>
 </header>
 
-<main class="p-5 bg-blur text-center my-main  add-view-container">
+<main class="p-5 bg-blur text-center text-light my-main  add-view-container">
+
     <div class="col">
         <label for="tasks">Choose a task:</label>
 
@@ -58,8 +58,9 @@
         <input type="button" value="Start" id="sw-go" disabled/>
     </div>
 </main>
-<th:block th:include="~{fragments/footer}"/>
-
+<div class="text-center text-light p-3" style="opacity: 0.9;">
+    © 2021 Copyright СТАЖ ФООТЕР
+</div>
 </body>
 <script>
     var sw = {
@@ -135,4 +136,3 @@
 
 
 </script>
-</html>
