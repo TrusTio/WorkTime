@@ -59,7 +59,10 @@ public class TaskController {
         taskService.save(taskServiceModel);
 
         return "redirect:add";
+    }
 
-
+    @GetMapping("/completed")
+    public String completed() {
+        return "completed-tasks.html";
     }
 }
