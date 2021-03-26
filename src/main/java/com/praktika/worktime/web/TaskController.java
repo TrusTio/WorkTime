@@ -40,6 +40,15 @@ public class TaskController {
         return "add-task";
     }
 
+    @GetMapping("/task/completed")
+    @PreAuthorize("isAuthenticated()")
+    public String completedTasks(Model model) {
+        List<Task> completedTaskList = taskService.getAllCompleted();
+
+        model.addAttribute("completedTaskList",completedTaskList);
+        return "completed-tasks";
+    }
+
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addToolConfirm(@Valid @ModelAttribute("taskAddBindingModel") TaskAddBindingModel taskAddBindingModel, BindingResult bindingResult,

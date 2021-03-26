@@ -41,4 +41,10 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findByName(name);
     }
 
+    @Override
+    public List<Task> getAllCompleted() {
+
+        return taskRepository.findAllByDurationIsNotNull();
+    }
+
 }

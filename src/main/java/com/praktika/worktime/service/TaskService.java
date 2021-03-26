@@ -11,4 +11,6 @@ public interface TaskService {
     void save(Task task);
     List<Task> getAll();
     Optional<Task> getByName(String name);
+
+    List<Task> getAllCompleted();
 }
