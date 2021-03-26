@@ -40,11 +40,12 @@ public class TaskController {
         return "add-task";
     }
 
-    @GetMapping("/task/completed")
+    @GetMapping("/completed")
     @PreAuthorize("isAuthenticated()")
     public String completedTasks(Model model) {
+        System.out.println();
         List<Task> completedTaskList = taskService.getAllCompleted();
-
+        System.out.println();
         model.addAttribute("completedTaskList",completedTaskList);
         return "completed-tasks";
     }
@@ -70,8 +71,5 @@ public class TaskController {
         return "redirect:add";
     }
 
-    @GetMapping("/completed")
-    public String completed() {
-        return "completed-tasks.html";
-    }
+
 }
